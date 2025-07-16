@@ -1,11 +1,12 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "haley-sims.github.io",
+  "description": "Personal Website V2",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "homepage": "https://haley-sims.github.io",
+  "author": "Haley Aaron <haleyesims@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/haleyaaron/bchiang_webv4"
   },
   "keywords": [
     "gatsby"
