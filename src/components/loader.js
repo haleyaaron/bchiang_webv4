@@ -45,33 +45,90 @@ const Loader = ({ finishLoading }) => {
     });
 
     loader
+      // 1. E top bar swipes across
       .add({
-        targets: '#logo path',
-        delay: 300,
-        duration: 1500,
+        targets: '#e-top',
+        scaleX: [0, 1],
+        opacity: [0, 1],
+        duration: 400,
         easing: 'easeInOutQuart',
-        strokeDashoffset: [anime.setDashoffset, 0],
+        transformOrigin: 'left center',
       })
+      // 2. H left vertical appears
       .add({
-        targets: '#logo #B',
-        duration: 700,
-        easing: 'easeInOutQuart',
-        opacity: 1,
-      })
-      .add({
-        targets: '#logo',
-        delay: 500,
+        targets: '#h-left',
+        scaleY: [0, 1],
+        opacity: [0, 1],
         duration: 300,
         easing: 'easeInOutQuart',
+        offset: '+=100', // starts 100ms after previous
+        transformOrigin: 'top center',
+      })
+      // 3. H right vertical appears, staggered just after left
+      .add({
+        targets: '#h-shared', // was #h-right
+        scaleY: [0, 1],
+        opacity: [0, 1],
+        duration: 300,
+        easing: 'easeInOutQuart',
+        offset: '+=100',
+        transformOrigin: 'top center',
+      })
+      // 4. E middle bar and H crossbar appear as verticals finish
+      .add({
+        targets: ['#e-middle', '#h-horizontal'],
+        scaleX: [0, 1],
+        opacity: [0, 1],
+        duration: 300,
+        easing: 'easeInOutQuart',
+        offset: '-=100', // overlaps with previous
+        transformOrigin: 'left center',
+      })
+      // 5. A left diagonal
+      .add({
+        targets: '#a-left',
+        scaleY: [0, 1],
+        opacity: [0, 1],
+        duration: 300,
+        easing: 'easeInOutQuart',
+        offset: '+=100',
+        transformOrigin: 'bottom center',
+      })
+      // 6. A right diagonal
+      .add({
+        targets: '#a-right',
+        scaleY: [0, 1],
+        opacity: [0, 1],
+        duration: 300,
+        easing: 'easeInOutQuart',
+        offset: '+=100',
+        transformOrigin: 'bottom center',
+      })
+      // 7. A crossbar and E bottom bar together
+      .add({
+        targets: ['#a-cross', '#e-bottom'],
+        scaleX: [0, 1],
+        opacity: [0, 1],
+        duration: 300,
+        easing: 'easeInOutQuart',
+        offset: '+=100',
+        transformOrigin: 'left center',
+      })
+      // 8. Fade out the whole logo
+      .add({
+        targets: '#logo',
         opacity: 0,
         scale: 0.1,
+        duration: 300,
+        easing: 'easeInOutQuart',
+        delay: 500,
       })
       .add({
         targets: '.loader',
-        duration: 200,
-        easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,
+        duration: 200,
+        easing: 'easeInOutQuart',
       });
   };
 

@@ -66,20 +66,12 @@ const Hero = () => {
     <>
       <p>
         I’m an engineer interested in organizations and products that support environmentally
-        sustainable infrastructure and responsible decision making{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        sustainable infrastructure and responsible decision making.
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="mailto:haleyesims@gmail.com"
-      target="_blank"
-      rel="noreferrer">
+    <a className="email-link" href="mailto:haleyesims@gmail.com" target="_blank" rel="noreferrer">
       Get in touch!
     </a>
   );
